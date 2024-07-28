@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily English Word</title>
+    <style>
+        body, html {
+            font-family: Arial, sans-serif;
+            background: #000000;
+            color: #ffffff;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .title {
+            font-size: 8em;
+            animation: slideInFromTop 1s ease-out;
+            margin-bottom: 65px;
+        }
+        .text {
+            font-size: 1.2em;
+            margin-bottom: 1em;
+            animation: slideInFromBottom 1s ease-out;
+            max-width: 45em;
+        }
+        .subscribe-section {
+            margin-top: 2em;
+            animation: fadeIn 2s ease-in-out;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        input[type="email"] {
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 25px;
+            outline: none;
+            background-color: #000000;
+            color: #ffffff;
+            width: 40em;
+            height: 2em;
+            display: flex;
+
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 15px;
+            background:#08a2fa;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            justify-content: left;
+            display: flex;
+            margin-top: 1.2em;
+        }
+        .btn {
+            background: #08a2fa;    
+        }
+        .row {
+            display: flex;
+            flex-direction: row;
+        }
+        .column {
+            display: flex;
+            flex-direction: column;
+        }
+        .logo-block {
+            margin-left: 20em;
+
+        }
+        .logo {
+            max-width: 50em;
+        }
+        .logo-text {
+            padding-top: 5em;
+        }
+        .qr-code {
+            /* background-color: white; */
+            border-radius: 25px;
+            width: 500px;
+        }
+        a {
+            text-decoration: none;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideInFromTop {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+        @keyframes slideInFromBottom {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+        @media (max-width: 1920px) {
+            .logo-block {
+            margin-left: 10em;
+        }
+        }
+        @media (max-width: 1200px) {
+            .logo-block {
+            margin-left: 0em;
+        }
+        .row {
+            flex-direction: column;
+        }
+        .subscribe-section {
+            display: flex;
+            justify-content: center;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+            <div class="column">
+                <p class="title">Daily Word</p>
+                <p class="text">Join thousands of subscribers who are enhancing their vocabulary every day.</p>
+                <div class="subscribe-section">
+                    <div class="qr-code">
+                        <img src="./qrcode.png"/>
+                    </div>
+                    <a class="btn" href="https://t.me/wordi_daily_bot" type="button" target="_blank">Link to Wordi Bot in Telegram</a>
+
+                    <!-- <form id="subscribeForm">
+
+                        <input type="email" name="email" placeholder="Enter your email" required>
+                        <input type="submit" value="Subscribe">
+                    </form> -->
+                </div>
+            </div>
+
+            <div class="logo-text">
+                <p class="text">Subscribe to receive a new English word every day for free!</p>
+                <p class="text">Expand your vocabulary effortlessly with our service. Every day, you'll receive a carefully chosen word, its definition, and an example sentence to help you understand its usage. </p>
+             </div>
+        </div>
+    </div>
+    <!-- <script>
+        document.getElementById('subscribeForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get the email value from the form
+            const email = document.querySelector('input[name="email"]').value;
+
+            // Prepare the data to be sent
+            const data = { email: email };
+
+            // Send the data to the server using fetch
+            fetch('http://localhost:3000/subscribe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Subscription successful!');
+                } else {
+                    alert('Subscription failed: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            });
+        });
+    </script> -->
+</body>
+</html>
+
